@@ -1,10 +1,14 @@
 pipeline {
     agent any
+    parameters {
+    string(name: 'NUMBERONE', defaultValue: 4       , description: 'The environment name [dev|cert|prod].')
+    string(name: 'NUMBERTWO', defaultValue: 4       , description: 'What should I say?')
 
+    }
     stages {
         stage('Clone Repo from github') {
             steps {
-                git 'https://github.com/darealmc/some_code.git'
+                git 'https://github.com/Ben-HMI/Jenkins.git'
             }
 
         }
