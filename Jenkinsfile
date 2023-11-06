@@ -1,8 +1,8 @@
 pipeline {
     agent any
     parameters {
-    string(name: 'NUMBERONE', defaultValue: 4       , description: 'The environment name [dev|cert|prod].')
-    string(name: 'NUMBERTWO', defaultValue: 4       , description: 'What should I say?')
+    string(name: 'NUMBERONE', defaultValue: "4"       , description: 'The environment name [dev|cert|prod].')
+    string(name: 'NUMBERTWO', defaultValue: "4"       , description: 'What should I say?')
 
     }
     stages {
