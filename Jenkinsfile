@@ -10,21 +10,21 @@ pipeline {
     stages {
         stage('Clone Repo from github') {
             steps {
-                git 'https://github.com/Ben-HMI/Jenkins.git'
+//                git 'https://github.com/Ben-HMI/Jenkins.git'
                 withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'aws-key', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                 AWS("--region=eu-west-1 s3 ls")
     }
             }
 
         }
-        stage('Build shell script') {
-            steps {
-                sh '''chmod +x testscript.sh
-                bash testscript.sh'''
-            }
+    //     stage('Build shell script') {
+    //         steps {
+    //             sh '''chmod +x testscript.sh
+    //             bash testscript.sh'''
+    //         }
 
-        }
+    //     }
 
-    }
+    // }
 }
 
