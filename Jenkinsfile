@@ -1,7 +1,12 @@
 @Library('github.com/releaseworks/jenkinslib') _
 
 pipeline {
-    agent any
+    agent {
+        docker {
+            label 'docker-agent-alpine'
+            image 'jenkins/agent'
+    }
+}
     parameters {
     string(name: 'NUMBERONE', defaultValue: "4"       , description: 'The environment name [dev|cert|prod].')
     string(name: 'NUMBERTWO', defaultValue: "4"       , description: 'What should I say?')
@@ -24,5 +29,5 @@ pipeline {
         }
 
     }
-}
+
 
