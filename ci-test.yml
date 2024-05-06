@@ -1,0 +1,8 @@
+name: Must run on custom runner 
+
+on: push 
+ init: 
+  runs-on: self-hosted
+   steps:
+    - run: echo 'bennel TAMBAUD'
+    - run: echo $HOSTNAME
