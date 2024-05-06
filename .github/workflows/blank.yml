@@ -1,9 +1,10 @@
-name: Must run on custom runner 
+name: Must run on custom runner
 
-on: push 
- jobs:
-  init: 
+on: push
+
+jobs:
+  init:
     runs-on: self-hosted
     steps:
-     - run: echo 'bennel TAMBAUD'
-     - run: echo $HOSTNAME
+      - run: echo 'hello Bennel TAMBAUD'
+      - run: echo $HOSTNAME
